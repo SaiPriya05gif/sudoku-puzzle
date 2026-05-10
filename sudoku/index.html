@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Sudoku</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Sudoku</h1>
+            <div class="controls-top">
+                <div class="stat-box">
+                    <span class="label">Time</span>
+                    <span id="timer" class="value">00:00</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">Mistakes</span>
+                    <span id="mistakes" class="value">0/3</span>
+                </div>
+            </div>
+            <div class="difficulty-selector">
+                <button class="diff-btn active" data-diff="easy">Easy</button>
+                <button class="diff-btn" data-diff="medium">Medium</button>
+                <button class="diff-btn" data-diff="hard">Hard</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="game-board" class="sudoku-board"></div>
+            
+            <div class="numpad">
+                <button class="num-btn" data-val="1">1</button>
+                <button class="num-btn" data-val="2">2</button>
+                <button class="num-btn" data-val="3">3</button>
+                <button class="num-btn" data-val="4">4</button>
+                <button class="num-btn" data-val="5">5</button>
+                <button class="num-btn" data-val="6">6</button>
+                <button class="num-btn" data-val="7">7</button>
+                <button class="num-btn" data-val="8">8</button>
+                <button class="num-btn" data-val="9">9</button>
+                <button class="control-btn" id="btn-erase">Erase</button>
+                <button class="control-btn" id="btn-hint">Hint</button>
+            </div>
+        </main>
+
+        <footer>
+            <button id="btn-restart" class="action-btn">Restart</button>
+            <button id="btn-new-game" class="action-btn primary">New Game</button>
+        </footer>
+
+        <!-- Win Modal -->
+        <div id="win-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You solved the puzzle in <span id="win-time">00:00</span></p>
+                <button id="btn-modal-new-game" class="action-btn primary">Play Again</button>
+            </div>
+        </div>
+        
+        <!-- Game Over Modal -->
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Game Over</h2>
+                <p>You made too many mistakes.</p>
+                <button id="btn-modal-retry" class="action-btn primary">Try Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
